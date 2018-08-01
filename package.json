@@ -1,0 +1,37 @@
+{
+  "name": "project1",
+  "version": "1.0.0",
+  "description": "first project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rodder1200/project1.git"
+  },
+  "author": "Roman Honcharuk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rodder1200/project1/issues"
+  },
+  "homepage": "https://github.com/Rodder1200/project1#readme",
+  "devDependencies": {
+    "browser-sync": "^2.24.4",
+    "del": "^3.0.0",
+    "delete": "^1.1.0",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-cli": "^2.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-pug": "^4.0.1",
+    "gulp-rename": "^1.2.3",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.0"
+  },
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "normalize.scss": "^0.1.0"
+  }
+}
