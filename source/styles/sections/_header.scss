@@ -1,0 +1,60 @@
+.header {
+    height: 68px;
+    background-color: #87b448;
+    border-bottom: 1px solid #71973c;
+    color: #fff;
+
+    .container {
+       height: 68px;
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+    }
+
+    &__logo {
+        padding: 0 15px;
+    }
+
+    &__search {
+        width: 350px;
+        height: 35px;
+        padding-left: 40px;
+        border-radius: 5px;
+        font-size: 1rem;
+        letter-spacing: 1px;
+        border: none;
+        outline: none;
+        -webkit-appearance: none;
+        background: #73993d url(../images/search.png) 4% 50% no-repeat;
+
+        &::before {
+            // content: '&#x1F50D';
+            content: 'sdfsdfsdfs';
+        }
+
+        &::placeholder {
+            color: #fff;
+        }
+    }
+
+    &__icons {
+        width: 70px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__user {
+        width: 220px;
+        margin-right: 15px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 0.9rem;
+    }
+
+    &__userImg {
+        padding-right: 11px;
+    }
+
+
+}

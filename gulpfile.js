@@ -39,16 +39,7 @@ gulp.task('styles:compile', function () {
 
 /* ------------ JS ------------- */
 gulp.task('js', function() {
-  return gulp.src([
-      'source/js/_init.js',
-      'source/js/_validation.js',
-      'source/js/_hero.js',
-      'source/js/_scrolling.js',
-      'source/js/_mobile_menu.js',
-      'source/js/_form.js',
-      'source/js/_testi.js',
-      'source/js/main.js'
-    ])
+  return gulp.src('source/js/main.js')
     .pipe(sourcemaps.init())
     .pipe(concat('main.min.js'))
     .pipe(uglify())

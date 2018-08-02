@@ -1,7 +1,7 @@
 {
-  "name": "project1",
+  "name": "project3",
   "version": "1.0.0",
-  "description": "first project",
+  "description": "third project",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Rodder1200/project1.git"
+    "url": "git+https://github.com/Rodder1200/project3.git"
   },
   "author": "Roman Honcharuk",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Rodder1200/project1/issues"
+    "url": "https://github.com/Rodder1200/project3/issues"
   },
-  "homepage": "https://github.com/Rodder1200/project1#readme",
+  "homepage": "https://github.com/Rodder1200/project3#readme",
   "devDependencies": {
     "browser-sync": "^2.24.4",
     "del": "^3.0.0",

@@ -1,0 +1,19 @@
+doctype html
+html(lang="en")
+	head
+		title Project1
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport" content="width=device-width")
+		meta(name="description" content="Catering")
+		meta(name="author" content="Roman Goncharuk")
+		link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
+		link(rel="stylesheet" href="css/main.min.css")
+		script(src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js")
+		script(defer src="js/main.min.js")
+	body
+		include sections/_mixins
+		include sections/_vars
+		include sections/_header
+		.main#app
+		

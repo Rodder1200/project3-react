@@ -1,0 +1,34 @@
+html {
+	box-sizing: border-box;
+}
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+body {
+	// font-family: $ff-main;
+	font-size: 0.7rem;
+	line-height: 1.2;
+	letter-spacing: 1px;
+}
+
+ul, 
+ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: $main_text_c;
+	font-weight: bold;
+
+	&:hover {
+		color: lighten($main_text_c, 10%);
+		cursor: pointer;
+	}
+}
+
+.container {
+	width: 970px; 
+	margin: 0 auto;
+ }
