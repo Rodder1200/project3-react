@@ -1,0 +1,20 @@
+.ad {
+    width: 212px;
+    height: 389px;
+    letter-spacing: 0;
+    @include borBot;
+
+    &__header {
+        font-size: 0.8rem;
+        color: $subtitle_c;
+    }
+
+    &__img {
+        // padding: 22px 0 10px;
+    }
+
+    &__footer {
+        font-size: 0.7rem;
+        color: #e2e2e2;
+    }
+}

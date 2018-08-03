@@ -3,12 +3,21 @@
 
 @import "global/_fonts";
 @import "global/_vars";
+@import "global/_mixins";
 @import "global/_base";
 
 @import "sections/_header";
 @import "sections/_nav";
+@import "sections/_ad";
 
 .main {
     width: 970px;
     margin: 0 auto;
+}
+
+.leftSidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0 15px;
 }
