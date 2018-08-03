@@ -1,0 +1,19 @@
+.nav {
+   width: 212px;
+
+   &__item {
+      height: 54px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      font-size: 0.9rem;
+      border-bottom: 1px solid #e0e2e6;
+   } 
+
+   &__link {
+      padding-left: 10px;  
+      color: $sec_text_c;   
+      letter-spacing: 0;
+      font-size: 0.9rem;
+   }
+}

@@ -6,4 +6,9 @@
 @import "global/_base";
 
 @import "sections/_header";
+@import "sections/_nav";
 
+.main {
+    width: 970px;
+    margin: 0 auto;
+}

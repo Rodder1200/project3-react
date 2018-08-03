@@ -26,11 +26,7 @@
         outline: none;
         -webkit-appearance: none;
         background: #73993d url(../images/search.png) 4% 50% no-repeat;
-
-        &::before {
-            // content: '&#x1F50D';
-            content: 'sdfsdfsdfs';
-        }
+        text-overflow: ellipsis;
 
         &::placeholder {
             color: #fff;
@@ -44,7 +40,7 @@
     }
 
     &__user {
-        width: 220px;
+        width: 213px;
         margin-right: 15px;
         display: flex;
         justify-content: flex-start;
@@ -56,5 +52,9 @@
         padding-right: 11px;
     }
 
-
+    &__userName {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
 }
