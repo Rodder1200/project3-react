@@ -1,8 +1,9 @@
 @font-face {
-    font-family: 'Proxima Nova';
-    src: local('Proxima Nova Alt Regular-webfont'),
-         url('./fonts/Proxima Nova Alt Regular-webfont.eot') format('eot'),
-         url('./fonts/Proxima Nova Alt Regular-webfont.svg') format('svg'),
-         url('./fonts/Proxima Nova Alt Regular-webfont.ttf') format('truetype')
-         url('./fonts/Proxima Nova Alt Regular-webfont.woff') format('woff')
-  }
+    font-family: 'Proxima Nova Regular';
+    src: url('../fonts/ProximaNova-Regular.eot');
+    src: url('../fonts/ProximaNova-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/ProximaNova-Regular.woff') format('woff'),
+    url('../fonts/ProximaNova-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

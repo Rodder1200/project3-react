@@ -10,13 +10,22 @@
 @import "sections/_nav";
 @import "sections/_ad";
 @import "sections/_fComp";
+@import "sections/_footer";
 
 .main {
     width: 970px;
     margin: 0 auto;
+    display: inline-block;
 }
 
 .leftSidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0 15px;
+}
+
+.rightSidebar {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
