@@ -1,7 +1,15 @@
-.fComp {
+.people {
     width: 212px;
-    height: 352px;
+    height: 420px;
     @include borBot;
+    margin-top: 10px;
+
+    &__items {
+        height: 360px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
 
     &__header {
         display: flex;
@@ -11,6 +19,7 @@
     &__title {
         font-size: 0.8rem;
         color: $subtitle_c;
+        margin: 10px 0;
     }
 
     &__seeAll {
@@ -19,27 +28,22 @@
     }
 
     &__img {
+        float: left;
         width: 81px;    
     }
 
-    &__items {
-        height: 281px;
+    &__text {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-around;
-        align-items: center;
-    }
-
-    &__text {
-        align-self: flex-start;
         width: 121px;  
         padding-left: 10px;  
         line-height: 1.5;
     }
 
     &__name {
-        font-size: 0.9rem;
-        margin: 0;
+        clear: both;
+        font-size: 1rem;
+        margin: 0 0 5px;
     }
 
     &__info {

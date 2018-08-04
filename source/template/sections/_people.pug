@@ -1,0 +1,17 @@
+.people
+    header.people__header 
+        h5.people__title Featured Companies
+        a(href=$$).people__seeAll See All
+    .people__items
+        - var imgs = ['dennis', 'mary', 'danielle']  
+        - var names = ['Dennis Adams', 'Mary Carpenter', 'Danielle Salazar'] 
+        - var locs = ['London, England', 'Belgrade, Serbia', 'Paris, France']
+        - for (var i = 0; i < imgs.length; i++)
+            .people__item
+                h4.people__name= names[i]
+                img(src="./images/"+imgs[i]+".png", alt=imgs[i]).people__img      
+                .people__text
+                    .people__info
+                        .people__special Dentist (Practice Owner)
+                        .people__location= locs[i]
+                    a(href=$$).people__link Add Friend

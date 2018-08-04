@@ -11,11 +11,13 @@
 @import "sections/_ad";
 @import "sections/_fComp";
 @import "sections/_footer";
+// @import "sections/_serviceDir";
+@import "sections/_people";
 
 .main {
     width: 970px;
     margin: 0 auto;
-    display: inline-block;
+    display: flex;
 }
 
 .leftSidebar {
@@ -23,6 +25,11 @@
     flex-direction: column;
     justify-content: flex-start;
     padding: 0 15px;
+}
+
+.centralPart {
+    width: 485px;
+    background-color: #ddd;
 }
 
 .rightSidebar {
