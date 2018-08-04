@@ -1,0 +1,16 @@
+.fComp
+    header.fComp__header 
+        h5.fComp__title Featured Companies
+        a(href=$$).fComp__seeAll See All
+    .fComp__items
+        - var imgs = ['serbia', 'usa', 'england']  
+        - var specs = ['Manufacturer', 'Service Provider', 'Supplier'] 
+        - var locs = ['Belgrade, Serbia', 'New York, USA', 'London, England']
+        - for (var i = 0; i < imgs.length; i++)
+            img(src="./images/feat_"+imgs[i]+".png", alt=imgs[i]).fComp__img      
+            .fComp__text
+                h4.fComp__name Company Name
+                .fComp__info
+                    .fComp__special= specs[i]
+                    .fComp__location= locs[i]
+                a(href=$$).fComp__follow Follow Now

@@ -1,0 +1,55 @@
+.fComp {
+    width: 212px;
+    height: 352px;
+    @include borBot;
+    letter-spacing: 0;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__title {
+        font-size: 0.8rem;
+        color: $subtitle_c;
+    }
+
+    &__seeAll {
+        font-size: 0.8rem;
+        align-self: center;
+    }
+
+    &__img {
+        width: 81px;    
+    }
+
+    &__items {
+        height: 281px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    &__text {
+        align-self: flex-start;
+        width: 121px;  
+        padding-left: 10px;  
+        line-height: 1.5;
+    }
+
+    &__name {
+        font-size: 0.9rem;
+        margin: 0;
+    }
+
+    &__info {
+        font-size: 0.8rem;
+        color: $subtitle_c;
+    }
+
+    &__follow {
+        font-size: 0.7rem;
+    }
+
+}
