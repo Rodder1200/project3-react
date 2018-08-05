@@ -1,0 +1,13 @@
+.fProd
+    header.fProd__header
+        h5.fProd__title Featured Products
+        a(href=$$).fProd__seeAll See All
+    .fProd__items
+        - var imgs = ['kid', 'doctor']
+        - for (var i = 0; i < imgs.length; i++)
+            .fProd__item
+                h4.fProd__name Product Name
+                img(src="./images/fprod_"+imgs[i]+".png", alt=imgs[i]).fProd__img
+                .fProd__text.
+                    Product Short Description. 
+                    The quick brown fox jumps over the lazy dog.

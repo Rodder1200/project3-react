@@ -1,6 +1,6 @@
 .people
     header.people__header 
-        h5.people__title Featured Companies
+        h5.people__title People you may know
         a(href=$$).people__seeAll See All
     .people__items
         - var imgs = ['dennis', 'mary', 'danielle']  
@@ -9,7 +9,7 @@
         - for (var i = 0; i < imgs.length; i++)
             .people__item
                 h4.people__name= names[i]
-                img(src="./images/"+imgs[i]+".png", alt=imgs[i]).people__img      
+                img(src="./images/people_"+imgs[i]+".png", alt=imgs[i]).people__img      
                 .people__text
                     .people__info
                         .people__special Dentist (Practice Owner)

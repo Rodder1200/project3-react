@@ -1,4 +1,4 @@
-.people {
+.fProd {
     width: 212px;
     @include borBot;
     margin-top: 10px;
@@ -9,6 +9,7 @@
         justify-content: space-between;
         margin-bottom: 10px;
     }
+
     &__item {
         padding: 10px 0;
     }
@@ -40,6 +41,8 @@
         width: 121px;  
         padding-left: 10px;  
         line-height: 1.5;
+        font-size: 0.8rem;
+        color: $subtitle_c;
     }
 
     &__name {
@@ -47,19 +50,4 @@
         font-size: 1rem;
         margin: 0 0 5px;
     }
-
-    &__info {
-        font-size: 0.8rem;
-        color: $subtitle_c;
-        line-height: 1.2;
-    }
-
-    &__location {
-        padding: 5px 0;
-    }
-
-    &__link {
-        font-size: 0.7rem;
-    }
-
 }

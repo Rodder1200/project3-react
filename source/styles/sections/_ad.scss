@@ -1,6 +1,5 @@
 .ad {
     width: 212px;
-    height: 389px;
     @include borBot;
 
     &__header {
@@ -8,12 +7,9 @@
         color: $subtitle_c;
     }
 
-    &__img {
-        // padding: 22px 0 10px;
-    }
-
     &__footer {
         font-size: 0.7rem;
         color: #e2e2e2;
+        padding: 5px 0 10px;
     }
 }
