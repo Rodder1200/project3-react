@@ -11,13 +11,14 @@
 @import "sections/_ad";
 @import "sections/_fComp";
 @import "sections/_footer";
-// @import "sections/_serviceDir";
+@import "sections/_serviceDir";
 @import "sections/_people";
 @import "sections/_fProd";
 @import "sections/_buttonChat";
 
 .main {
-    width: 970px;
+    min-width: 970px;
+    max-width: 1440px;
     margin: 0 auto;
     display: flex;
 }
@@ -27,11 +28,6 @@
     flex-direction: column;
     justify-content: flex-start;
     padding: 0 15px;
-}
-
-.centralPart {
-    width: 485px;
-    background-color: #ddd;
 }
 
 .rightSidebar {

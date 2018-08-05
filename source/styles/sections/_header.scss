@@ -13,9 +13,11 @@
 
     &__logo {
         padding: 0 15px;
+        height: 40px;
     }
 
     &__search {
+        color: #fff;
         width: 350px;
         height: 35px;
         padding-left: 40px;
@@ -30,6 +32,7 @@
 
         &::placeholder {
             color: #fff;
+            opacity: 1;
         }
     }
 
@@ -41,6 +44,7 @@
 
     &__user {
         width: 213px;
+        height: 32px;
         margin-right: 15px;
         display: flex;
         justify-content: flex-start;
@@ -49,6 +53,7 @@
     }
 
     &__userImg {
+        height: 32px;
         padding-right: 11px;
     }
 

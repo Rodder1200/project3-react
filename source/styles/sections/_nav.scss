@@ -12,11 +12,17 @@
       align-items: center;
       font-size: 0.9rem;
       @include borBot;
+
    } 
 
    &__link {
       padding-left: 10px;  
       color: $sec_text_c;   
       font-size: 0.9rem;
+
+      &:hover {
+        cursor: pointer;
+        color: #87b448;
+      }
    }
 }
