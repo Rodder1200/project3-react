@@ -3,32 +3,7 @@
         h1.serviceDir__title Service Directory
         button.serviceDir__addNew Add New Service
     .serviceDir__services
-        - 
-          var services = {
-              accountancy: 'Accountancy',
-              associations: 'Associations',
-              buy_sellDentalPractice: 'Buy/Sell Dental Practice',
-              clinicalWasteCollection: 'Clinical Waste Collection',
-              computerService: 'Computer Service',
-              CPR_basicLifeSupportTraining: 'CPR/Basic Life Support Training',
-              dentalRecruitment: 'Dental Recruitment',
-              dentalSoftware: 'Dental Software',
-              electricalSafetyTesting: 'Electrical Safety And Testing',
-              marketing: 'Marketing',
-              others: 'Others',
-              repairs: 'Repairs',
-              solicitors: 'Solicitors',
-              surgeryDesign: 'Surgery Design',
-              trainingCourses: 'Training & Courses',
-              webDesigners: 'Web Designers',
-              cleaningAgencies: 'Cleaning Agencies',
-              dentalChairRecovery: 'Dental Chair Recovery',
-              equipmentEngineering: 'Equipment Engineering',
-              sellingGold: 'Selling Gold',
-              uniformWorkwear: 'Uniform & Workwear'
-          }
-        each val, key in services
-            .serviceDir__item
-                .serviceDir__img
-                    img(src="./images/category_icons/"+key+".png", alt="key")
-                .serviceDir__text= val
+      .serviceDir__item(v-for="img, i in imgs")
+        .serviceDir__img_border
+            img.serviceDir__img(v-bind:src="img")
+        .serviceDir__text {{titles[i]}}

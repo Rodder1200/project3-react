@@ -39,7 +39,10 @@ gulp.task('styles:compile', function () {
 
 /* ------------ JS ------------- */
 gulp.task('js', function() {
-  return gulp.src('source/js/main.js')
+  return gulp.src([
+    // 'source/js/main.js',
+    'source/js/services.js'
+  ])
     .pipe(sourcemaps.init())
     .pipe(concat('main.min.js'))
     .pipe(uglify())

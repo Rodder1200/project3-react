@@ -33,7 +33,7 @@
           </ul>
         </nav>
         <div class="ad">
-              <h5 class="ad__header">Advertisment</h5><img class="ad__img" src="./images/ad_left_stars.png" alt="ad_left_stars">
+              <h5 class="ad__header">Advertisment</h5><img class="ad__img" src="./images/ad_left_nurse.png" alt="ad_left_nurse">
               <footer class="ad__footer">Ads By Danteez.com</footer>
         </div>
         <div class="fComp">
@@ -76,90 +76,16 @@
             <button class="serviceDir__addNew">Add New Service</button>
           </header>
           <div class="serviceDir__services">
-            <div class="serviceDir__item">
-              <div class="serviceDir__img"><img src="./images/category_icons/accountancy.png" alt="key"></div>
-              <div class="serviceDir__text">Accountancy</div>
+            <div class="serviceDir__item" v-for="img, i in imgs">
+              <div class="serviceDir__img_border"><img class="serviceDir__img" v-bind:src="img"></div>
+              <div class="serviceDir__text">{{titles[i]}}</div>
             </div>
-            <div class="serviceDir__item">
-              <div class="serviceDir__img"><img src="./images/category_icons/associations.png" alt="key"></div>
-              <div class="serviceDir__text">Associations</div>
-            </div>
-            <div class="serviceDir__item">
-              <div class="serviceDir__img"><img src="./images/category_icons/buy_sellDentalPractice.png" alt="key"></div>
-              <div class="serviceDir__text">Buy/Sell Dental Practice</div>
-            </div>
-            <div class="serviceDir__item">
-              <div class="serviceDir__img"><img src="./images/category_icons/clinicalWasteCollection.png" alt="key"></div>
-              <div class="serviceDir__text">Clinical Waste Collection</div>
-            </div>
-            <div class="serviceDir__item">
-              <div class="serviceDir__img"><img src="./images/category_icons/computerService.png" alt="key"></div>
-              <div class="serviceDir__text">Computer Service</div>
-            </div>
-            <div class="serviceDir__item">
-              <div class="serviceDir__img"><img src="./images/category_icons/CPR_basicLifeSupportTraining.png" alt="key"></div>
-              <div class="serviceDir__text">CPR/Basic Life Support Training</div>
-            </div>
-            <div class="serviceDir__item">
-              <div class="serviceDir__img"><img src="./images/category_icons/dentalRecruitment.png" alt="key"></div>
-              <div class="serviceDir__text">Dental Recruitment</div>
-            </div>
-            <div class="serviceDir__item">
-              <div class="serviceDir__img"><img src="./images/category_icons/dentalSoftware.png" alt="key"></div>
-              <div class="serviceDir__text">Dental Software</div>
-            </div>
-            <div class="serviceDir__item">
-              <div class="serviceDir__img"><img src="./images/category_icons/electricalSafetyTesting.png" alt="key"></div>
-              <div class="serviceDir__text">Electrical Safety And Testing</div>
-            </div>
-            <div class="serviceDir__item">
-              <div class="serviceDir__img"><img src="./images/category_icons/marketing.png" alt="key"></div>
-              <div class="serviceDir__text">Marketing</div>
-            </div>
-            <div class="serviceDir__item">
-              <div class="serviceDir__img"><img src="./images/category_icons/others.png" alt="key"></div>
-              <div class="serviceDir__text">Others</div>
-            </div>
-            <div class="serviceDir__item">
-              <div class="serviceDir__img"><img src="./images/category_icons/repairs.png" alt="key"></div>
-              <div class="serviceDir__text">Repairs</div>
-            </div>
-            <div class="serviceDir__item">
-              <div class="serviceDir__img"><img src="./images/category_icons/solicitors.png" alt="key"></div>
-              <div class="serviceDir__text">Solicitors</div>
-            </div>
-            <div class="serviceDir__item">
-              <div class="serviceDir__img"><img src="./images/category_icons/surgeryDesign.png" alt="key"></div>
-              <div class="serviceDir__text">Surgery Design</div>
-            </div>
-            <div class="serviceDir__item">
-              <div class="serviceDir__img"><img src="./images/category_icons/trainingCourses.png" alt="key"></div>
-              <div class="serviceDir__text">Training &amp; Courses</div>
-            </div>
-            <div class="serviceDir__item">
-              <div class="serviceDir__img"><img src="./images/category_icons/webDesigners.png" alt="key"></div>
-              <div class="serviceDir__text">Web Designers</div>
-            </div>
-            <div class="serviceDir__item">
-              <div class="serviceDir__img"><img src="./images/category_icons/cleaningAgencies.png" alt="key"></div>
-              <div class="serviceDir__text">Cleaning Agencies</div>
-            </div>
-            <div class="serviceDir__item">
-              <div class="serviceDir__img"><img src="./images/category_icons/dentalChairRecovery.png" alt="key"></div>
-              <div class="serviceDir__text">Dental Chair Recovery</div>
-            </div>
-            <div class="serviceDir__item">
-              <div class="serviceDir__img"><img src="./images/category_icons/equipmentEngineering.png" alt="key"></div>
-              <div class="serviceDir__text">Equipment Engineering</div>
-            </div>
-            <div class="serviceDir__item">
-              <div class="serviceDir__img"><img src="./images/category_icons/sellingGold.png" alt="key"></div>
-              <div class="serviceDir__text">Selling Gold</div>
-            </div>
-            <div class="serviceDir__item">
-              <div class="serviceDir__img"><img src="./images/category_icons/uniformWorkwear.png" alt="key"></div>
-              <div class="serviceDir__text">Uniform &amp; Workwear</div>
-            </div>
+          </div>
+        </div>
+        <div class="modal-wrapper">
+          <div class="modal">
+            <div class="head"><a class="btn-close" href="javascript:;" v-on:click="onClose"></a></div>
+            <div class="content">{{error}}</div>
           </div>
         </div>
       </section>
@@ -220,7 +146,7 @@
           </div>
         </div>
         <div class="ad">
-              <h5 class="ad__header">Advertisment</h5><img class="ad__img" src="./images/ad_right_doctors.png" alt="ad_right_doctors">
+              <h5 class="ad__header">Advertisment</h5><img class="ad__img" src="./images/ad_right_umbrella.png" alt="ad_right_umbrella">
               <footer class="ad__footer">Ads By Danteez.com</footer>
         </div>
         <button class="buttonChat">Chat with friends (<span>36</span>)</button>

@@ -32,7 +32,7 @@
     &__item {
         width: 140px;
         height: 185px;
-        margin: 0 9px 10px;
+        margin: 0 9px 20px;
 
         &:hover {
             cursor: pointer;
@@ -40,15 +40,22 @@
         }
     }
 
-    &__img {
+    &__img_border {
         height: 140px;
         border: 1px solid #e0e2e6;
         margin-bottom: 10px;
-        padding: 25% 25%;
+    }
+
+    &__img {
+        display: block;
+        width: 100px;
+        margin: 20px auto;
     }
 
     &__text {
         text-align: center;
-        font-size: 1rem;
+        font-size: 0.9rem;
+        text-overflow: ellipsis;
+        overflow: hidden;
     }
 }
