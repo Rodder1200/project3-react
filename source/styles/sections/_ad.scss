@@ -1,15 +1,16 @@
 .ad {
     width: 212px;
-    @include borBot;
 
     &__header {
-        font-size: 0.8rem;
+        font-size: 0.875rem;
         color: $subtitle_c;
+        margin: 17px 0 16px;
     }
 
     &__footer {
         font-size: 0.7rem;
         color: #e2e2e2;
-        padding: 5px 0 10px;
+        padding: 2px 0 18px;
+        font-weight: 600;
     }
 }

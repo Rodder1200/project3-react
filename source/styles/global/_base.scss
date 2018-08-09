@@ -8,6 +8,7 @@ html {
 body {
 	font-family: $ff-main;
 	font-size: 0.7rem;
+	font-weight: 400;
 	line-height: 1.2;
 }
 
@@ -22,7 +23,7 @@ a {
 	font-weight: bold;
 
 	&:hover {
-		color: lighten($main_text_c, 10%);
+		color: #87b448;
 		cursor: pointer;
 	}
 }

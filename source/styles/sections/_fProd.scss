@@ -1,17 +1,20 @@
 .fProd {
     width: 212px;
     @include borBot;
-    margin-top: 10px;
+    margin-top: 18px;
 
     &__items {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        margin-bottom: 10px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin: 2px 0 12px;
     }
 
     &__item {
-        padding: 10px 0;
+        padding-top: 10px;
+        margin-bottom: 10px;
     }
 
     &__header {
@@ -20,34 +23,37 @@
     }
 
     &__title {
-        font-size: 0.8rem;
+        font-size: 0.875rem;
         color: $subtitle_c;
-        margin: 10px 0;
+        margin: 0;
     }
 
     &__seeAll {
-        font-size: 0.8rem;
-        align-self: center;
+        font-size: 0.875rem;
     }
 
     &__img {
         float: left;
-        width: 81px;    
+        width: 81px; 
     }
 
     &__text {
         display: flex;
         flex-wrap: wrap;
-        width: 121px;  
+        width: 125px;  
         padding-left: 10px;  
-        line-height: 1.5;
-        font-size: 0.8rem;
+        line-height: 1.2;
+        font-size: 0.875rem;
         color: $subtitle_c;
+
+        p {
+            margin: 0;
+        }
     }
 
     &__name {
         clear: both;
         font-size: 1rem;
-        margin: 0 0 5px;
+        margin: 0 0 1px;
     }
 }

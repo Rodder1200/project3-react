@@ -22,7 +22,8 @@ gulp.task('server', function() {
 
 /*---------Pug-compile---------*/
 gulp.task('templates:compile', function buildHTML() {
-	return gulp.src('source/template/index.pug')
+  return gulp.src(['source/template/index.pug', 
+                   'source/template/contactUs.pug'])
 	.pipe(pug({
     	pretty: true
   	}))
@@ -40,7 +41,6 @@ gulp.task('styles:compile', function () {
 /* ------------ JS ------------- */
 gulp.task('js', function() {
   return gulp.src([
-    // 'source/js/main.js',
     'source/js/services.js'
   ])
     .pipe(sourcemaps.init())

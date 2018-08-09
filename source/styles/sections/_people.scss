@@ -1,16 +1,16 @@
 .people {
     width: 212px;
     @include borBot;
-    margin-top: 10px;
+    padding-bottom: 18px;
 
     &__items {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        margin-bottom: 10px;
     }
+
     &__item {
-        padding: 10px 0;
+        margin: 10px 0 6px;
     }
 
     &__header {
@@ -19,14 +19,14 @@
     }
 
     &__title {
-        font-size: 0.8rem;
+        font-size: 0.875rem;
         color: $subtitle_c;
-        margin: 10px 0;
+        margin: 17px 0 5px;
     }
 
     &__seeAll {
-        font-size: 0.8rem;
-        align-self: center;
+        font-size: 0.875rem;
+        margin-top: 18px;
     }
 
     &__img {
@@ -39,7 +39,7 @@
         flex-wrap: wrap;
         width: 121px;  
         padding-left: 10px;  
-        line-height: 1.5;
+        line-height: 1.2;
     }
 
     &__name {
@@ -49,7 +49,7 @@
     }
 
     &__info {
-        font-size: 0.8rem;
+        font-size: 0.875rem;
         color: $subtitle_c;
         line-height: 1.2;
     }
@@ -60,6 +60,7 @@
 
     &__link {
         font-size: 0.7rem;
+        letter-spacing: 0.5px;
     }
 
 }

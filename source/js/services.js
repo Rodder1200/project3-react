@@ -1,5 +1,5 @@
 var serv = new Vue({
-    el: '.centralPart',
+    el: '#serv',
     data: {
         imgs: [],
         titles: [],
@@ -8,7 +8,6 @@ var serv = new Vue({
 
     created: function created() {
         var _this = this;
-            // modal = document.querySelector(".modal-wrapper");
 
         fetch('http://504080.com/api/v1/services/categories', {
             method: 'get',

@@ -1,7 +1,7 @@
 .header {
     height: 68px;
     background-color: #87b448;
-    border-bottom: 1px solid #71973c;
+    border-bottom: 2px solid #71973c;
     color: #fff;
 
     .container {
@@ -12,14 +12,15 @@
     }
 
     &__logo {
-        padding: 0 15px;
+        padding-left: 25px;
+        margin-top: -8px;
         height: 40px;
     }
 
     &__search {
         color: #fff;
-        width: 350px;
-        height: 35px;
+        width: 394px;
+        height: 32px;
         padding-left: 40px;
         border-radius: 5px;
         font-size: 1rem;
@@ -27,12 +28,11 @@
         border: none;
         outline: none;
         -webkit-appearance: none;
-        background: #73993d url(../images/search.png) 4% 50% no-repeat;
+        background: #73993d url(../images/search.png) 3% 50% no-repeat;
         text-overflow: ellipsis;
 
         &::placeholder {
-            color: #fff;
-            opacity: 1;
+            color: #87b448;
         }
     }
 
@@ -43,13 +43,12 @@
     }
 
     &__user {
-        width: 213px;
+        width: 220px;
         height: 32px;
-        margin-right: 15px;
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 
     &__userImg {

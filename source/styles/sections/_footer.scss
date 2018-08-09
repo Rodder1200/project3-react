@@ -1,8 +1,18 @@
 .footer {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     color: #b7bfcd;
+    
+    p {
+        margin-top: 14px;
+    }
 
-    span {
-        padding-left: 23px;
+    a {
+        padding-right: 17px;
+        color: #b7bfcd;
+        font-weight: 400;
+
+        &:hover {
+            color: #87b448;
+        }
     }
 }
