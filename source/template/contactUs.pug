@@ -1,48 +1,66 @@
 include sections/_layout
 header.c_header
-    img.c_header_logo
-section.c_hero
-    h1.c_hero_title Home of Dentistry
-    p.c_hero_subtitle. 
-        Denteez was created by dentists for dentistry
-        in order to make life of everyone involved
-        in dentistry easier.
+    .c_header_top
+        img.c_header_logo(src="./images/header_logo.png")
+        button.c_header_button Log in Now
+    .c_header_bottom
+        h1.c_header_title Home of Dentistry
+        p.c_header_subtitle. 
+            Denteez was created by dentists for dentistry
+            in order to make life of everyone involved
+            in dentistry easier.
 form.c_form
-    p.c_form_note Fields marked "*" are required
-    label Enquiry Type *
-        select(name="")
-            option(value="1")
-            option(value="2")
-            option(value="3")
-    input(type="text" placeholder="Other")
-    label Name *
-        input(type="text" placeholder="Dentist")
-    label Email *
-        input(type="email" placeholder="rachelm@gmail.com")    
-    label Subject *
-        input(type="text")
-    label Description *
-        textarea(cols="50" rows="10" maxlength="1000")
-    input(type="file")
-    button(type="submit") Submit
+    .c_form_cont(action="http://504080.com/api/v1/support" method="post")
+        .c_form_note Fields marked "*" are required
+        div
+            label Enquiry Type *
+                select(name="" required)
+                    option(value="1")
+                    option(value="2")
+                    option(value="3")
+        input(type="text" placeholder="Other")
+        div.c_form_row
+            .c_form_half
+                label Name *
+                    input(type="text" placeholder="Dentist" required)
+            .c_form_half
+                label Email *
+                    input(type="email" placeholder="rachelm@gmail.com" required)    
+        div
+            label Subject *
+                input(type="text" required)
+        div
+            label
+                .c_form_descr 
+                    div Description * 
+                    div (0/1000)
+                textarea(maxlength="1000" required)
+        .c_form_add_photo
+            .c_form_add_title Add photo
+            .c_form_add_text Minimum size of 300x300 jpeg jpg png 5 MB
+        button.c_form_submit Submit
 section.c_about
     h2.c_about_title About Denteez
-    p.c_about_left.
-        Why is always so difficult to find what you are looking
-        for in dentistry? Whether it is the latest advancement in technology
-        or technologies or simply a review or understanding of the vast
-        amount of products? Perhaps finding someone to just fix your broken
-        equipment or simply hiring new staff or looking for the new job? 
-    p.c_about_right.
-        Our mission is to give every dental professional the possibility
-        to discuss and share all aspects of their profession, their practice
-        and their business. We aim to make the world of dentistry easy and
-        accessible, so every dental professional can find what they are
-        looking for quickly and easily all in on place.
+    .c_about_text
+        p.c_about_item.
+            Why is always so difficult to find what you are looking
+            for in dentistry? Whether it is the latest advancement in technology
+            or technologies or simply a review or understanding of the vast
+            amount of products? Perhaps finding someone to just fix your broken
+            equipment or simply hiring new staff or looking for the new job? 
+        p.c_about_item.
+            Our mission is to give every dental professional the possibility
+            to discuss and share all aspects of their profession, their practice
+            and their business. We aim to make the world of dentistry easy and
+            accessible, so every dental professional can find what they are
+            looking for quickly and easily all in on place.
 footer.c_footer
     p Denteez Copyright 2015
     ul
-        li Support
-        li Privacy Policy
-        li Terms of use
+        li
+            a(href=$$) Support
+        li
+            a(href=$$) Privacy Policy
+        li
+            a(href=$$) Terms of use
 

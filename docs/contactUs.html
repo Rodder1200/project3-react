@@ -13,62 +13,89 @@
   </head>
   <body></body>
 </html>
-<header class="c_header"><img class="c_header_logo"></header>
-<section class="c_hero">
-  <h1 class="c_hero_title">Home of Dentistry</h1>
-  <p class="c_hero_subtitle">
-    Denteez was created by dentists for dentistry
-    in order to make life of everyone involved
-    in dentistry easier.
-  </p>
-</section>
+<header class="c_header">
+  <div class="c_header_top"><img class="c_header_logo" src="./images/header_logo.png">
+    <button class="c_header_button">Log in Now</button>
+  </div>
+  <div class="c_header_bottom">
+    <h1 class="c_header_title">Home of Dentistry</h1>
+    <p class="c_header_subtitle">
+      Denteez was created by dentists for dentistry
+      in order to make life of everyone involved
+      in dentistry easier.
+    </p>
+  </div>
+</header>
 <form class="c_form">
-  <p class="c_form_note">Fields marked "*" are required</p>
-  <label>Enquiry Type *
-    <select name="">
-      <option value="1"></option>
-      <option value="2"></option>
-      <option value="3"></option>
-    </select>
-  </label>
-  <input type="text" placeholder="Other">
-  <label>Name *
-    <input type="text" placeholder="Dentist">
-  </label>
-  <label>Email *
-    <input type="email" placeholder="rachelm@gmail.com">
-  </label>
-  <label>Subject *
-    <input type="text">
-  </label>
-  <label>Description *
-    <textarea cols="50" rows="10" maxlength="1000"></textarea>
-  </label>
-  <input type="file">
-  <button type="submit">Submit</button>
+  <div class="c_form_cont" action="http://504080.com/api/v1/support" method="post">
+    <div class="c_form_note">Fields marked "*" are required</div>
+    <div>
+      <label>Enquiry Type *
+        <select name="" required>
+          <option value="1"></option>
+          <option value="2"></option>
+          <option value="3"></option>
+        </select>
+      </label>
+    </div>
+    <input type="text" placeholder="Other">
+    <div class="c_form_row">
+      <div class="c_form_half">
+        <label>Name *
+          <input type="text" placeholder="Dentist" required>
+        </label>
+      </div>
+      <div class="c_form_half">
+        <label>Email *
+          <input type="email" placeholder="rachelm@gmail.com" required>
+        </label>
+      </div>
+    </div>
+    <div>
+      <label>Subject *
+        <input type="text" required>
+      </label>
+    </div>
+    <div>
+      <label>
+        <div class="c_form_descr"> 
+          <div>Description * </div>
+          <div>(0/1000)</div>
+        </div>
+        <textarea maxlength="1000" required></textarea>
+      </label>
+    </div>
+    <div class="c_form_add_photo">
+      <div class="c_form_add_title">Add photo</div>
+      <div class="c_form_add_text">Minimum size of 300x300 jpeg jpg png 5 MB</div>
+    </div>
+    <button class="c_form_submit">Submit</button>
+  </div>
 </form>
 <section class="c_about">
   <h2 class="c_about_title">About Denteez</h2>
-  <p class="c_about_left">
-    Why is always so difficult to find what you are looking
-    for in dentistry? Whether it is the latest advancement in technology
-    or technologies or simply a review or understanding of the vast
-    amount of products? Perhaps finding someone to just fix your broken
-    equipment or simply hiring new staff or looking for the new job? 
-  </p>
-  <p class="c_about_right">
-    Our mission is to give every dental professional the possibility
-    to discuss and share all aspects of their profession, their practice
-    and their business. We aim to make the world of dentistry easy and
-    accessible, so every dental professional can find what they are
-    looking for quickly and easily all in on place.
-  </p>
+  <div class="c_about_text">
+    <p class="c_about_item">
+      Why is always so difficult to find what you are looking
+      for in dentistry? Whether it is the latest advancement in technology
+      or technologies or simply a review or understanding of the vast
+      amount of products? Perhaps finding someone to just fix your broken
+      equipment or simply hiring new staff or looking for the new job? 
+    </p>
+    <p class="c_about_item">
+      Our mission is to give every dental professional the possibility
+      to discuss and share all aspects of their profession, their practice
+      and their business. We aim to make the world of dentistry easy and
+      accessible, so every dental professional can find what they are
+      looking for quickly and easily all in on place.
+    </p>
+  </div>
 </section>
 <footer class="c_footer">
   <p>Denteez Copyright 2015</p>
   <ul>
-    <li>Support</li>
-    <li>Privacy Policy</li>
-    <li>Terms of use</li>
+    <li><a>Support</a></li>
+    <li><a>Privacy Policy</a></li>
+    <li><a>Terms of use</a></li>
   </ul>
 </footer>
