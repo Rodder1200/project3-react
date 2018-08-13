@@ -41,10 +41,10 @@ gulp.task('styles:compile', function () {
 /* ------------ JS ------------- */
 gulp.task('js', function() {
   return gulp.src([
-    'source/js/services.js'
+    'source/js/services.js',
+    'source/js/contacts.js'
   ])
     .pipe(sourcemaps.init())
-    .pipe(concat('main.min.js'))
     .pipe(uglify())
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('docs/js'));

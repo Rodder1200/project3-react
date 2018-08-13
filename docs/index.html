@@ -1,154 +1,155 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Project3</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width">
-    <meta name="description" content="dentistry">
-    <meta name="author" content="Roman Goncharuk">
-    <link rel="stylesheet" href="css/main.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
-    <script defer src="js/main.min.js"></script>
-  </head>
-  <body></body>
-</html>
-<header class="header">
-  <div class="container"><img class="header__logo" src="./images/header_logo.png" alt="header_logo">
-    <input class="header__search" type="search" placeholder="Search">
-    <div class="header__icons"><img class="header__chat" src="./images/header_icon_chat.png" alt="header__chat"><img class="header__notifications" src="./images/header_icon_notif.png" alt="header__notifications"></div>
-    <div class="header__user"><img class="header__userImg" src="./images/user_image.png" alt="user_image">
-      <div class="header__userName">Maximillian Beekeeper</div>
+
+<script defer="defer" src="js/services.js"></script>
+<body><!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <title>Project3</title>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width">
+      <meta name="description" content="dentistry">
+      <meta name="author" content="Roman Goncharuk">
+      <link rel="stylesheet" href="css/main.min.css">
+      <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    </head>
+  </html>
+  <header class="header">
+    <div class="container"><img class="header__logo" src="./images/header_logo.png" alt="header_logo">
+      <input class="header__search" type="search" placeholder="Search">
+      <div class="header__icons"><img class="header__chat" src="./images/header_icon_chat.png" alt="header__chat"><img class="header__notifications" src="./images/header_icon_notif.png" alt="header__notifications"></div>
+      <div class="header__user"><img class="header__userImg" src="./images/user_image.png" alt="user_image">
+        <div class="header__userName">Maximillian Beekeeper</div>
+      </div>
     </div>
+  </header>
+  <div class="main" id="serv">
+    <aside class="leftSidebar"> 
+      <nav class="nav">
+        <ul>
+          <li class="nav__item"><img class="nav__icon" src="./images/nav_feed.png" alt="Feed"><a class="nav__link" href="javascript:void(0);">Feed</a></li>
+          <li class="nav__item"><img class="nav__icon" src="./images/nav_ask.png" alt="Ask a Colleague"><a class="nav__link" href="javascript:void(0);">Ask a Colleague</a></li>
+          <li class="nav__item"><img class="nav__icon" src="./images/nav_companies.png" alt="Companies"><a class="nav__link" href="javascript:void(0);">Companies</a></li>
+          <li class="nav__item"><img class="nav__icon" src="./images/nav-services.png" alt="Service Directory"><a class="nav__link" href="javascript:void(0);">Service Directory</a></li>
+        </ul>
+      </nav>
+      <div class="ad">
+          <h5 class="ad__header">Advertisement</h5><img class="ad__img" src="./images/ad_left_stars.png" alt="ad_left_stars">
+          <footer class="ad__footer">Ads By Danteez.com</footer>
+      </div>
+      <div class="fComp">
+        <header class="fComp__header"> 
+          <h5 class="fComp__title">Featured Companies</h5><a class="fComp__seeAll" href="javascript:void(0);">See All</a>
+        </header>
+        <div class="fComp__items"><img class="fComp__img" src="./images/feat_serbia.png" alt="serbia">
+          <div class="fComp__text">
+            <h4 class="fComp__name">Company Name</h4>
+            <div class="fComp__info">
+              <div class="fComp__special">Manufacturer</div>
+              <div class="fComp__location">Belgrade, Serbia</div>
+            </div><a class="fComp__link" href="javascript:void(0);">Follow Now</a>
+          </div><img class="fComp__img" src="./images/feat_usa.png" alt="usa">
+          <div class="fComp__text">
+            <h4 class="fComp__name">Company Name</h4>
+            <div class="fComp__info">
+              <div class="fComp__special">Service Provider</div>
+              <div class="fComp__location">New York, USA</div>
+            </div><a class="fComp__link" href="javascript:void(0);">Follow Now</a>
+          </div><img class="fComp__img" src="./images/feat_england.png" alt="england">
+          <div class="fComp__text">
+            <h4 class="fComp__name">Company Name</h4>
+            <div class="fComp__info">
+              <div class="fComp__special">Supplier</div>
+              <div class="fComp__location">London, England</div>
+            </div><a class="fComp__link" href="javascript:void(0);">Follow Now</a>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <p>Denteez Copyright 2015</p>
+        <p> <a href="javascript:void(0);">Terms of use</a><a href="javascript:void(0);">Privacy Policy</a></p>
+      </footer>
+    </aside>
+    <section class="centralPart">
+      <div class="serviceDir">
+        <header class="serviceDir__header">
+          <h1 class="serviceDir__title">Service Directory</h1>
+          <button class="serviceDir__addNew">Add New Service</button>
+        </header>
+        <div class="serviceDir__services">
+          <div class="serviceDir__item" v-for="img, i in imgs">
+            <div class="serviceDir__img_border"><img class="serviceDir__img" v-bind:src="img"></div>
+            <div class="serviceDir__text">{{titles[i]}}</div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-wrapper">
+        <div class="modal">
+          <div class="head"><a class="btn-close" href="javascript:;" v-on:click="onClose"></a></div>
+          <div class="content">{{error}}</div>
+        </div>
+      </div>
+    </section>
+    <aside class="rightSidebar">
+      <div class="people">
+        <header class="people__header"> 
+          <h5 class="people__title">People you may know</h5><a class="people__seeAll" href="javascript:void(0);">See All</a>
+        </header>
+        <div class="people__items">
+          <div class="people__item">
+            <h4 class="people__name">Dennis Adams</h4><img class="people__img" src="./images/people_dennis.png" alt="dennis">
+            <div class="people__text">
+              <div class="people__info">
+                <div class="people__special">Dentist (Practice Owner)</div>
+                <div class="people__location">London, England</div>
+              </div><a class="people__link" href="javascript:void(0);">Add Friend</a>
+            </div>
+          </div>
+          <div class="people__item">
+            <h4 class="people__name">Mary Carpenter</h4><img class="people__img" src="./images/people_mary.png" alt="mary">
+            <div class="people__text">
+              <div class="people__info">
+                <div class="people__special">Dentist (Practice Owner)</div>
+                <div class="people__location">Belgrade, Serbia</div>
+              </div><a class="people__link" href="javascript:void(0);">Add Friend</a>
+            </div>
+          </div>
+          <div class="people__item">
+            <h4 class="people__name">Danielle Salazar</h4><img class="people__img" src="./images/people_danielle.png" alt="danielle">
+            <div class="people__text">
+              <div class="people__info">
+                <div class="people__special">Dentist (Practice Owner)</div>
+                <div class="people__location">Paris, France</div>
+              </div><a class="people__link" href="javascript:void(0);">Add Friend</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fProd">
+        <header class="fProd__header">
+          <h5 class="fProd__title">Featured Products</h5><a class="fProd__seeAll" href="javascript:void(0);">See All</a>
+        </header>
+        <div class="fProd__items">
+          <div class="fProd__item">
+            <h4 class="fProd__name">Product Name</h4><img class="fProd__img" src="./images/fprod_kid.png" alt="kid">
+            <div class="fProd__text">
+              <p>Product Short Description. </p>
+              <p>The quick brown fox jumps over the lazy dog.</p>
+            </div>
+          </div>
+          <div class="fProd__item">
+            <h4 class="fProd__name">Product Name</h4><img class="fProd__img" src="./images/fprod_doctor.png" alt="doctor">
+            <div class="fProd__text">
+              <p>Product Short Description. </p>
+              <p>The quick brown fox jumps over the lazy dog.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ad">
+          <h5 class="ad__header">Advertisement</h5><img class="ad__img" src="./images/ad_right_doctors.png" alt="ad_right_doctors">
+          <footer class="ad__footer">Ads By Danteez.com</footer>
+      </div>
+      <button class="buttonChat">Chat with friends (<span>36</span>)</button>
+    </aside>
   </div>
-</header>
-<div class="main" id="serv">
-  <aside class="leftSidebar"> 
-    <nav class="nav">
-      <ul>
-        <li class="nav__item"><img class="nav__icon" src="./images/nav_feed.png" alt="Feed"><a class="nav__link" href="javascript:void(0);">Feed</a></li>
-        <li class="nav__item"><img class="nav__icon" src="./images/nav_ask.png" alt="Ask a Colleague"><a class="nav__link" href="javascript:void(0);">Ask a Colleague</a></li>
-        <li class="nav__item"><img class="nav__icon" src="./images/nav_companies.png" alt="Companies"><a class="nav__link" href="javascript:void(0);">Companies</a></li>
-        <li class="nav__item"><img class="nav__icon" src="./images/nav-services.png" alt="Service Directory"><a class="nav__link" href="javascript:void(0);">Service Directory</a></li>
-      </ul>
-    </nav>
-    <div class="ad">
-      <h5 class="ad__header">Advertisement</h5><img class="ad__img" src="./images/ad_left_nurse.png" alt="ad_left_nurse">
-      <footer class="ad__footer">Ads By Danteez.com</footer>
-    </div>
-    <div class="fComp">
-      <header class="fComp__header"> 
-        <h5 class="fComp__title">Featured Companies</h5><a class="fComp__seeAll" href="javascript:void(0);">See All</a>
-      </header>
-      <div class="fComp__items"><img class="fComp__img" src="./images/feat_serbia.png" alt="serbia">
-        <div class="fComp__text">
-          <h4 class="fComp__name">Company Name</h4>
-          <div class="fComp__info">
-            <div class="fComp__special">Manufacturer</div>
-            <div class="fComp__location">Belgrade, Serbia</div>
-          </div><a class="fComp__link" href="javascript:void(0);">Follow Now</a>
-        </div><img class="fComp__img" src="./images/feat_usa.png" alt="usa">
-        <div class="fComp__text">
-          <h4 class="fComp__name">Company Name</h4>
-          <div class="fComp__info">
-            <div class="fComp__special">Service Provider</div>
-            <div class="fComp__location">New York, USA</div>
-          </div><a class="fComp__link" href="javascript:void(0);">Follow Now</a>
-        </div><img class="fComp__img" src="./images/feat_england.png" alt="england">
-        <div class="fComp__text">
-          <h4 class="fComp__name">Company Name</h4>
-          <div class="fComp__info">
-            <div class="fComp__special">Supplier</div>
-            <div class="fComp__location">London, England</div>
-          </div><a class="fComp__link" href="javascript:void(0);">Follow Now</a>
-        </div>
-      </div>
-    </div>
-    <footer class="footer">
-      <p>Denteez Copyright 2015</p>
-      <p> <a href="javascript:void(0);">Terms of use</a><a href="javascript:void(0);">Privacy Policy</a></p>
-    </footer>
-  </aside>
-  <section class="centralPart">
-    <div class="serviceDir">
-      <header class="serviceDir__header">
-        <h1 class="serviceDir__title">Service Directory</h1>
-        <button class="serviceDir__addNew">Add New Service</button>
-      </header>
-      <div class="serviceDir__services">
-        <div class="serviceDir__item" v-for="img, i in imgs">
-          <div class="serviceDir__img_border"><img class="serviceDir__img" v-bind:src="img"></div>
-          <div class="serviceDir__text">{{titles[i]}}</div>
-        </div>
-      </div>
-    </div>
-    <div class="modal-wrapper">
-      <div class="modal">
-        <div class="head"><a class="btn-close" href="javascript:;" v-on:click="onClose"></a></div>
-        <div class="content">{{error}}</div>
-      </div>
-    </div>
-  </section>
-  <aside class="rightSidebar">
-    <div class="people">
-      <header class="people__header"> 
-        <h5 class="people__title">People you may know</h5><a class="people__seeAll" href="javascript:void(0);">See All</a>
-      </header>
-      <div class="people__items">
-        <div class="people__item">
-          <h4 class="people__name">Dennis Adams</h4><img class="people__img" src="./images/people_dennis.png" alt="dennis">
-          <div class="people__text">
-            <div class="people__info">
-              <div class="people__special">Dentist (Practice Owner)</div>
-              <div class="people__location">London, England</div>
-            </div><a class="people__link" href="javascript:void(0);">Add Friend</a>
-          </div>
-        </div>
-        <div class="people__item">
-          <h4 class="people__name">Mary Carpenter</h4><img class="people__img" src="./images/people_mary.png" alt="mary">
-          <div class="people__text">
-            <div class="people__info">
-              <div class="people__special">Dentist (Practice Owner)</div>
-              <div class="people__location">Belgrade, Serbia</div>
-            </div><a class="people__link" href="javascript:void(0);">Add Friend</a>
-          </div>
-        </div>
-        <div class="people__item">
-          <h4 class="people__name">Danielle Salazar</h4><img class="people__img" src="./images/people_danielle.png" alt="danielle">
-          <div class="people__text">
-            <div class="people__info">
-              <div class="people__special">Dentist (Practice Owner)</div>
-              <div class="people__location">Paris, France</div>
-            </div><a class="people__link" href="javascript:void(0);">Add Friend</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="fProd">
-      <header class="fProd__header">
-        <h5 class="fProd__title">Featured Products</h5><a class="fProd__seeAll" href="javascript:void(0);">See All</a>
-      </header>
-      <div class="fProd__items">
-        <div class="fProd__item">
-          <h4 class="fProd__name">Product Name</h4><img class="fProd__img" src="./images/fprod_kid.png" alt="kid">
-          <div class="fProd__text">
-            <p>Product Short Description. </p>
-            <p>The quick brown fox jumps over the lazy dog.</p>
-          </div>
-        </div>
-        <div class="fProd__item">
-          <h4 class="fProd__name">Product Name</h4><img class="fProd__img" src="./images/fprod_doctor.png" alt="doctor">
-          <div class="fProd__text">
-            <p>Product Short Description. </p>
-            <p>The quick brown fox jumps over the lazy dog.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="ad">
-      <h5 class="ad__header">Advertisement</h5><img class="ad__img" src="./images/ad_right_pinguins.png" alt="ad_right_pinguins">
-      <footer class="ad__footer">Ads By Danteez.com</footer>
-    </div>
-    <button class="buttonChat">Chat with friends (<span>36</span>)</button>
-  </aside>
-</div>
+</body>

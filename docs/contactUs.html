@@ -1,101 +1,108 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Project3</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width">
-    <meta name="description" content="dentistry">
-    <meta name="author" content="Roman Goncharuk">
-    <link rel="stylesheet" href="css/main.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
-    <script defer src="js/main.min.js"></script>
-  </head>
-  <body></body>
-</html>
-<header class="c_header">
-  <div class="c_header_top"><img class="c_header_logo" src="./images/header_logo.png">
-    <button class="c_header_button">Log in Now</button>
-  </div>
-  <div class="c_header_bottom">
-    <h1 class="c_header_title">Home of Dentistry</h1>
-    <p class="c_header_subtitle">
-      Denteez was created by dentists for dentistry
-      in order to make the life of everyone involved
-      in dentistry easier.
-    </p>
-  </div>
-</header>
-<form class="c_form">
-  <div class="c_form_cont" action="http://504080.com/api/v1/support" method="post">
-    <div class="c_form_note">Fields marked "*" are required</div>
-    <div>
-      <label>Enquiry Type *
-        <select name="" required>
-          <option value="1"></option>
-          <option value="2"></option>
-          <option value="3"></option>
-        </select>
-      </label>
-    </div>
-    <input type="text" placeholder="Other">
-    <div class="c_form_row">
-      <div class="c_form_half">
-        <label>Name *
-          <input type="text" placeholder="Dentist" required>
-        </label>
+
+<script defer="defer" src="js/contacts.js"></script>
+<body><!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <title>Project3</title>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width">
+      <meta name="description" content="dentistry">
+      <meta name="author" content="Roman Goncharuk">
+      <link rel="stylesheet" href="css/main.min.css">
+      <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    </head>
+  </html>
+  <div id="cont">
+    <header class="c_header">
+      <div class="c_header_top"><img class="c_header_logo" src="./images/header_logo.png">
+        <button class="c_header_button">Log in Now</button>
       </div>
-      <div class="c_form_half">
-        <label>Email *
-          <input type="email" placeholder="rachelm@gmail.com" required>
-        </label>
+      <div class="c_header_bottom">
+        <h1 class="c_header_title">Home of Dentistry</h1>
+        <p class="c_header_subtitle">
+          Denteez was created by dentists for dentistry
+          in order to make the life of everyone involved
+          in dentistry easier.
+        </p>
       </div>
-    </div>
-    <div>
-      <label>Subject *
-        <input type="text" required>
-      </label>
-    </div>
-    <div>
-      <label>
-        <div class="c_form_descr"> 
-          <div>Description * </div>
-          <div>(0/1000)</div>
+    </header>
+    <form class="c_form">
+      <div class="c_form_cont" action="http://504080.com/api/v1/support" method="post">
+        <div class="c_form_note">Fields marked "*" are required</div>
+        <div>
+          <label>Enquiry Type *
+            <select name="enqury_type" v-model="selected" required>
+              <option v-for="option in options" v-bind:value="option">{{option}}</option>
+            </select>
+          </label>
         </div>
-        <textarea maxlength="1000" required></textarea>
-      </label>
-    </div>
-    <div class="c_form_add_photo">
-      <div class="c_form_add_title">Add photo</div>
-      <div class="c_form_add_text">Minimum size of 300x300 jpeg jpg png 5 MB</div>
-    </div>
-    <button class="c_form_submit">Submit</button>
+        <input type="text" placeholder="Other" v-if="other">
+        <div class="c_form_row">
+          <div class="c_form_half">
+            <label>Name *
+              <input type="text" placeholder="Dentist" required>
+            </label>
+          </div>
+          <div class="c_form_half">
+            <label>Email *
+              <input type="email" placeholder="rachelm@gmail.com" required>
+            </label>
+          </div>
+        </div>
+        <div>
+          <label>Subject *
+            <input type="text" required>
+          </label>
+        </div>
+        <div>
+          <label>
+            <div class="c_form_descr"> 
+              <div>Description * </div>
+              <div>({{counter}}/1000)</div>
+            </div>
+            <textarea maxlength="1000" required v-model="textareaVal"></textarea>
+          </label>
+        </div>
+        <div class="c_form_photoCont">
+          <div class="c_form_new_photo" v-for="img in imgs"><img class="c_form_newImg" v-bind:src="img" alt="img" width="130" height="130">
+            <button class="c_form_closeBut" v-bind:id="img" type="button" v-on:click="onClose"></button>
+          </div>
+          <div class="c_form_add_photo">
+            <input id="c_form_hiddenAdd" type="file" accept=".jpg, .jpeg, .png" v-on:change="addPhoto">
+            <div class="c_form_add_title">Add photo</div>
+            <div class="c_form_add_text">Minimum size of 300x300 jpeg jpg png 5 MB</div>
+          </div>
+        </div>
+        <button class="c_form_submit">Submit</button>
+      </div>
+    </form>
+    <section class="c_about">
+      <h2 class="c_about_title">About Denteez</h2>
+      <div class="c_about_text">
+        <p class="c_about_item">
+          Why is it always so difficult to find what you are looking
+          for in dentistry? Whether it is the latest advancement in technology
+          or techniques or simply a review or understanding of the vast
+          amount of products? Perhaps finding someone to just fix your broken
+          equipment or simply hiring new staff or looking for that new job? 
+        </p>
+        <p class="c_about_item">
+          Our mission is to give every dental professional the possibility
+          to discuss and share all aspects of their profession, their practice
+          and their business. We aim to make the world of dentistry easy and
+          accessible, so every dental professional can find what they are
+          looking for quickly and easily all in one place.
+        </p>
+      </div>
+    </section>
+    <footer class="c_footer">
+      <p>Denteez Copyright 2015</p>
+      <ul>
+        <li><a>Support</a></li>
+        <li><a>Privacy Policy</a></li>
+        <li><a>Terms of use</a></li>
+      </ul>
+    </footer>
   </div>
-</form>
-<section class="c_about">
-  <h2 class="c_about_title">About Denteez</h2>
-  <div class="c_about_text">
-    <p class="c_about_item">
-      Why is it always so difficult to find what you are looking
-      for in dentistry? Whether it is the latest advancement in technology
-      or techniques or simply a review or understanding of the vast
-      amount of products? Perhaps finding someone to just fix your broken
-      equipment or simply hiring new staff or looking for that new job? 
-    </p>
-    <p class="c_about_item">
-      Our mission is to give every dental professional the possibility
-      to discuss and share all aspects of their profession, their practice
-      and their business. We aim to make the world of dentistry easy and
-      accessible, so every dental professional can find what they are
-      looking for quickly and easily all in one place.
-    </p>
-  </div>
-</section>
-<footer class="c_footer">
-  <p>Denteez Copyright 2015</p>
-  <ul>
-    <li><a>Support</a></li>
-    <li><a>Privacy Policy</a></li>
-    <li><a>Terms of use</a></li>
-  </ul>
-</footer>
+</body>

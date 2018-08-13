@@ -122,6 +122,31 @@
         justify-content: space-between;
     }
 
+    &_photoCont {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &_newImg{
+        object-fit: cover;
+        border-radius: 5px;
+    }
+
+    &_closeBut {
+        background: url(../images/close_but_blue.png) no-repeat;
+        width: 24px;
+        height: 24px;
+        left: -15px;
+        top: -120px;
+        margin-right: 20px;
+        border: none;
+        position: relative;
+
+        &:hover {
+            background: url(../images/close_but_red.png)  top right no-repeat;
+        }
+    }
+
     &_add_photo {
         width: 130px;
         height: 130px;
@@ -129,10 +154,7 @@
         border-radius: 5px;
         text-align: center;
         padding: 30px 15px;
-
-        &:hover {
-            cursor: pointer;
-        }
+        margin-bottom: 42px;
     }
 
     &_add_title {
@@ -146,11 +168,26 @@
         color: #c6c6c7;
     }
 
+    #c_form_hiddenAdd {
+        opacity: 0;
+        position: relative;
+        overflow: hidden;
+        height: 165px;
+        width: 130px;
+        left: -15px;
+        top: -70px;
+        margin-bottom: -165px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
     &_submit {
         width: 760px;
         height: 50px;
         display: block;
-        margin: 42px 0 0 -20px;
+        margin-left: -20px;
         background-color: #87b448;
         border: none;
         border-radius: 5px;

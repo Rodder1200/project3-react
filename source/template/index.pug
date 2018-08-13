@@ -1,19 +1,21 @@
-include sections/_layout
-include sections/_mixins
-include sections/_vars
-include sections/_header
-.main#serv
-	aside.leftSidebar 
-		include sections/_nav
-		include sections/_ad_left
-		include sections/_fComp
-		include sections/_footer
-	section.centralPart
-		include sections/_serviceDir
-		include sections/_modal
-	aside.rightSidebar
-		include sections/_people
-		include sections/_fProd
-		include sections/_ad_right
-		button.buttonChat Chat with friends (#[span 36])
+script(defer src="js/services.js")
+body
+	include sections/_layout
+	include sections/_mixins
+	include sections/_vars
+	include sections/_header
+	.main#serv
+		aside.leftSidebar 
+			include sections/_nav
+			include sections/_ad_left
+			include sections/_fComp
+			include sections/_footer
+		section.centralPart
+			include sections/_serviceDir
+			include sections/_modal
+		aside.rightSidebar
+			include sections/_people
+			include sections/_fProd
+			include sections/_ad_right
+			button.buttonChat Chat with friends (#[span 36])
 				
