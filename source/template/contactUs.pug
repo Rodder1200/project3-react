@@ -4,7 +4,7 @@ body
     #cont
         header.c_header
             .c_header_top
-                img.c_header_logo(src="./images/header_logo.png")
+                img.c_header_logo(src="./images/header_logo.png" alt="header_logo" height="40")
                 button.c_header_button Log in Now
             .c_header_bottom
                 h1.c_header_title Home of Dentistry
@@ -12,38 +12,41 @@ body
                     Denteez was created by dentists for dentistry
                     in order to make the life of everyone involved
                     in dentistry easier.
-        form.c_form
+        form.c_form(v-on:submit="onSubmit" novalidate)
             .c_form_cont(action="http://504080.com/api/v1/support" method="post")
                 .c_form_note Fields marked "*" are required
                 div
                     label Enquiry Type *
-                        select(name="enqury_type" v-model="selected" required)
+                        select(name="enqury_type" v-model="selected")
                             option(v-for="option in options" v-bind:value="option") {{option}}
-                input(type="text" placeholder="Other" v-if="other")
+                input(type="text" placeholder="Other" v-if="other" name="other")
                 div.c_form_row
                     .c_form_half
                         label Name *
-                            input(type="text" placeholder="Dentist" required)
+                            input(type="text" placeholder="Dentist" name="name" v-model="name")
+                        .c_form_name_error(v-if="nameError") Please enter a valid name! 
                     .c_form_half
                         label Email *
-                            input(type="email" placeholder="rachelm@gmail.com" required)    
+                            input(type="email" placeholder="rachelm@gmail.com" name="email" v-model="email")
+                        .c_form_email_error(v-if="emailError") Please enter a valid email address!   
                 div
                     label Subject *
-                        input(type="text" required)
+                        input(type="text" name="subject")
                 div
                     label
                         .c_form_descr 
                             div Description * 
                             div ({{counter}}/1000)
-                        textarea(maxlength="1000" required v-model="textareaVal")
+                        textarea(maxlength="1000" v-model="textareaVal" name="description")
                 .c_form_photoCont
                     .c_form_new_photo(v-for="img in imgs")
                         img(v-bind:src="img" alt="img" width="130" height="130").c_form_newImg
                         button(v-bind:id="img" type="button" v-on:click="onClose").c_form_closeBut
                     .c_form_add_photo
-                        input#c_form_hiddenAdd(type="file" accept=".jpg, .jpeg, .png" v-on:change="addPhoto")
+                        input#c_form_hiddenAdd(type="file" accept=".jpg, .jpeg, .png" v-on:change="addPhoto" title=" " name="photo")
                         .c_form_add_title Add photo
                         .c_form_add_text Minimum size of 300x300 jpeg jpg png 5 MB
+                        .c_form_photo_error(v-if="photoInvalid") The photo does not meet the requirements
                 button.c_form_submit Submit
         section.c_about
             h2.c_about_title About Denteez

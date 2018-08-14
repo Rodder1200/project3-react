@@ -15,7 +15,7 @@
   </html>
   <div id="cont">
     <header class="c_header">
-      <div class="c_header_top"><img class="c_header_logo" src="./images/header_logo.png">
+      <div class="c_header_top"><img class="c_header_logo" src="./images/header_logo.png" alt="header_logo" height="40">
         <button class="c_header_button">Log in Now</button>
       </div>
       <div class="c_header_bottom">
@@ -27,32 +27,34 @@
         </p>
       </div>
     </header>
-    <form class="c_form">
+    <form class="c_form" v-on:submit="onSubmit" novalidate>
       <div class="c_form_cont" action="http://504080.com/api/v1/support" method="post">
         <div class="c_form_note">Fields marked "*" are required</div>
         <div>
           <label>Enquiry Type *
-            <select name="enqury_type" v-model="selected" required>
+            <select name="enqury_type" v-model="selected">
               <option v-for="option in options" v-bind:value="option">{{option}}</option>
             </select>
           </label>
         </div>
-        <input type="text" placeholder="Other" v-if="other">
+        <input type="text" placeholder="Other" v-if="other" name="other">
         <div class="c_form_row">
           <div class="c_form_half">
             <label>Name *
-              <input type="text" placeholder="Dentist" required>
+              <input type="text" placeholder="Dentist" name="name" v-model="name">
             </label>
+            <div class="c_form_name_error" v-if="nameError">Please enter a valid name! </div>
           </div>
           <div class="c_form_half">
             <label>Email *
-              <input type="email" placeholder="rachelm@gmail.com" required>
+              <input type="email" placeholder="rachelm@gmail.com" name="email" v-model="email">
             </label>
+            <div class="c_form_email_error" v-if="emailError">Please enter a valid email address!   </div>
           </div>
         </div>
         <div>
           <label>Subject *
-            <input type="text" required>
+            <input type="text" name="subject">
           </label>
         </div>
         <div>
@@ -61,7 +63,7 @@
               <div>Description * </div>
               <div>({{counter}}/1000)</div>
             </div>
-            <textarea maxlength="1000" required v-model="textareaVal"></textarea>
+            <textarea maxlength="1000" v-model="textareaVal" name="description"></textarea>
           </label>
         </div>
         <div class="c_form_photoCont">
@@ -69,9 +71,10 @@
             <button class="c_form_closeBut" v-bind:id="img" type="button" v-on:click="onClose"></button>
           </div>
           <div class="c_form_add_photo">
-            <input id="c_form_hiddenAdd" type="file" accept=".jpg, .jpeg, .png" v-on:change="addPhoto">
+            <input id="c_form_hiddenAdd" type="file" accept=".jpg, .jpeg, .png" v-on:change="addPhoto" title=" " name="photo">
             <div class="c_form_add_title">Add photo</div>
             <div class="c_form_add_text">Minimum size of 300x300 jpeg jpg png 5 MB</div>
+            <div class="c_form_photo_error" v-if="photoInvalid">The photo does not meet the requirements</div>
           </div>
         </div>
         <button class="c_form_submit">Submit</button>
