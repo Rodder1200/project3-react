@@ -3,6 +3,7 @@
     height: 352px;
     @include borTop;
     @include borBot;
+    text-overflow: ellipsis;
 
     &__header {
         display: flex;

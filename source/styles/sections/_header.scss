@@ -29,7 +29,6 @@
         outline: none;
         -webkit-appearance: none;
         background: #73993d url(../images/search.png) 3% 50% no-repeat;
-        text-overflow: ellipsis;
 
         &::placeholder {
             color: #87b448;
@@ -58,7 +57,6 @@
 
     &__userName {
         white-space: nowrap;
-        text-overflow: ellipsis;
         overflow: hidden;
     }
 }
