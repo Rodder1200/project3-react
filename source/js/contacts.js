@@ -7,16 +7,15 @@ var cont = new Vue({
         selected: '',
         imgs: [],
         other: false,
-        name: '',
         email: '',
         photoInvalid: false,
-        nameValid: false,
-        emailValid: false,
-        enquiryValid: false,
-        subjectValid: false,
-        descrValid: false,
-        nameError: false,
-        emailError: false
+        errors: {
+            enquiry_type: false,
+            user_name: false, 
+            email: false, 
+            subject: false, 
+            description: false,
+            other: false}
     },
     created: function created() {
         var _this = this;
@@ -39,7 +38,7 @@ var cont = new Vue({
     },
 
     watch: {
-        selected: function (val) {
+        selected: function () {
             if (this.selected == 'Other') {
                 this.other = true;
             } else {
@@ -53,101 +52,91 @@ var cont = new Vue({
 
     methods: {
         addPhoto: function() {
-            var file = document.querySelector('input[type=file]').files[0];
-            var src = window.URL.createObjectURL(file);
-            var fileTypes = ['image/jpeg', 'image/jpg', 'image/png'];
-            var fileValid = fileTypes.some(function(item){
-                return item == file.type;
-            });
+            var file = document.querySelectorAll('input[type=file]')[cont.imgs.length].files[0];
+            var input = document.querySelectorAll('input[type=file]')[cont.imgs.length];
+            var firstInput = document.querySelector('#c_form_hiddenAdd');
+            var textCont = document.querySelector('.c_form_text_cont');
+            var regV = /image\//gi;
+            var img = new Image();
 
-            if (file.size < 5242880 && fileValid) {
-                this.imgs.push(src);
-                this.photoInvalid = false;
+            img.src = window.URL.createObjectURL(file);  
+            
+            if (regV.test(file.type)) {
+                img.onload = function() {
+                    var width = img.naturalWidth,
+                        height = img.naturalHeight;
+                        
+                        if (file.size < 5242880 && width >= 300 && height >= 300) {
+                            cont.imgs.push(img.src);
+                            input.setAttribute('readonly', '');
+                            input.style.width = '0';
+                            input.style.height = '0';
+                            firstInput.style.marginRight = '0px';
+                            textCont.style.marginTop = '-170px';
+                            cont.photoInvalid = false;
+                        } else {
+                            cont.photoInvalid = true;
+                            input.removeAttribute('readonly');
+                        }                       
+                    }    
             } else {
-                this.photoInvalid = true;
+                cont.photoInvalid = true;
             }
         },
 
         onClose: function(e) {
             var index = this.imgs.indexOf(e.target.id);
+            var lastInput = document.querySelectorAll('input[type=file]')[cont.imgs.length - 1];
+            var textCont = document.querySelector('.c_form_text_cont');
+            var firstInput = document.querySelector('#c_form_hiddenAdd');
 
             this.imgs.splice(index, 1);
+            lastInput.style.width = '130px';
+            lastInput.style.height = '170px';
+
+            if (this.imgs == "") {
+                textCont.style.marginTop = '0px';
+                firstInput.style.marginRight = '-130px';
+                firstInput.style.height = '170px';
+            }
         },
 
         onSubmit: function(e) {
-            var regName = /[\wа-я]+/ig;
             var regEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-            var name = document.querySelector('input[name=name]');
+            var required = document.querySelectorAll('[data-check=required]');
             var email = document.querySelector('input[name=email]');
-            var select = document.querySelector('select');
             var other = document.querySelector('input[name=other]');
-            var subject = document.querySelector('input[name=subject]');
-            var descr = document.querySelector('textarea[name=description]');
-
-            this.nameValid = regName.test(this.name);
-            this.emailValid = regEmail.test(this.email);
             
-            if (!this.nameValid) {
-                this.nameError = true; 
-                name.classList.add('c_form_error_border');
-                e.preventDefault();
-            } else {
-                name.classList.remove('c_form_error_border');
-                this.nameError = false;
-            }
+            required.forEach(function(item){
+                if (!item.value) {
+                    item.classList.add('c_form_error_border');
+                    cont.errors[item.name] = true;
+                    e.preventDefault();
+                } else {
+                    item.classList.remove('c_form_error_border');
+                    cont.errors[item.name] = false;
+                }
+            });
 
-            if (!this.emailValid) {
+            if (!regEmail.test(this.email)) {
                 email.classList.add('c_form_error_border');
-                this.emailError = true;
+                this.errors.email = true;
                 e.preventDefault();
             } else {
                 email.classList.remove('c_form_error_border');
-                this.emailError = false;
+                this.errors.email = false;
             }
 
-            if (this.selected && !this.other) {
-                this.enquiryValid = true;
-                select.classList.remove('c_form_error_border');
-            } else if (this.selected && this.other && other.value) {
-                this.enquiryValid = true;
-                select.classList.remove('c_form_error_border');
-                other.classList.remove('c_form_error_border');
-            } else if (this.other && !other.value) {
-                this.enquiryValid = false;
+            if (this.other && !other.value) {
                 other.classList.add('c_form_error_border');
+                this.errors.other = true;
                 e.preventDefault();
+            } else if (this.other && other.value) {
+                other.classList.remove('c_form_error_border');
+                this.errors.other = false;
             } else {
-                this.enquiryValid = false;
-                select.classList.add('c_form_error_border');
-                e.preventDefault();
+                this.errors.other = false;
             }
-
-            if (!subject.value) {
-                subject.classList.add('c_form_error_border');
-                this.subjectValid = false;
-                e.preventDefault();
-            } else {
-                this.subjectValid = true;
-                subject.classList.remove('c_form_error_border');
-            }
-
-            if (!descr.value) {
-                descr.classList.add('c_form_error_border');
-                this.descrValid = false;
-                e.preventDefault();
-            } else {
-                this.descrValid = true;
-                descr.classList.remove('c_form_error_border');
-            }
-
-            // if  (this.nameValid &&
-            //     this.emailValid &&
-            //     this.enquiryValid &&
-            //     this.subjectValid &&
-            //     this.descrValid) {
-            //         console.log('Congrculation');
-            //     }
-            
         }
     }
 });
