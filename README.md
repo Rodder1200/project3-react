@@ -8,5 +8,5 @@
 * https://rodder1200.github.io/project3/index
 * https://rodder1200.github.io/project3/contactUs
 
-##### * - API doesn't work propely because of some http/https conflict
+##### * - API doesn't work properly because of some http/https conflict
 
