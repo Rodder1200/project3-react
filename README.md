@@ -4,7 +4,7 @@
 
 ### Task: https://goo.gl/U47z1L
 
-### Hosted*: 
+### Hosted: 
 * http://rodder.zzz.com.ua/project3/serviceDir/
 * http://rodder.zzz.com.ua/project3/contactUs/
 
