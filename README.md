@@ -5,8 +5,6 @@
 ### Task: https://goo.gl/U47z1L
 
 ### Hosted*: 
-* https://rodder1200.github.io/project3/index
-* https://rodder1200.github.io/project3/contactUs
-
-##### * - API doesn't work properly because of some http/https conflict
+* http://rodder.zzz.com.ua/project3/serviceDir/
+* http://rodder.zzz.com.ua/project3/contactUs/
 
