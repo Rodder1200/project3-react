@@ -1,20 +1,20 @@
-.c_header {
+.c-header {
     height: 510px;
     color: #fff;
     background: #ddd url(../images/contact_header_bg.png) center/cover no-repeat;
 
-    &_top {
+    &__top {
         display: flex;
         justify-content: space-between;
     }
 
-    &_logo {
+    &__logo {
         margin-left: 50px;
         margin-top: 40px;
         height: 40px;
     }
 
-    &_button {
+    &__button {
         width: 110px;
         height: 30px;
         margin-right: 40px;
@@ -25,7 +25,7 @@
         background-color: #87b448;
     }
 
-    &_bottom {
+    &__bottom {
         display: block;
         width: 500px;
         height: 300px;
@@ -33,14 +33,14 @@
         text-align: center;
     }
 
-    &_title {
+    &__title {
         font-size: 2.95rem;
         font-weight: 400;
         margin: 0;
 
     }
 
-    &_subtitle {
+    &__subtitle {
         font-size: 1.23rem;
         font-weight: 400;
         line-height: 1.5;
@@ -50,13 +50,13 @@
 
 @import "sections/_c_form";
 
-.c_about {
+.c-about {
     max-width: 1440px;
     min-width: 970px;
     margin: 92px auto;
     padding: 0 80px;
 
-    &_title {
+    &__title {
         text-align: center;
         font-size: 1.85rem;
         color: #2b3442;
@@ -64,7 +64,7 @@
         margin-bottom: 20px;
     }
 
-    &_text {
+    &__text {
         font-size: 1rem;
         display: flex;
         justify-content: space-between;
@@ -72,13 +72,13 @@
         letter-spacing: -0.1px;
     }
 
-    &_item {
+    &__item {
         width: 47%;
         color: #7c8695;
     }
 }
 
-.c_footer {
+.c-footer {
     height: 75px;
     padding: 20px 80px 20px;
     @include borTop;

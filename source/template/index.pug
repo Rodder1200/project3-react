@@ -1,18 +1,18 @@
 include sections/_layout
-script(defer src="js/services.js")
+script(defer src="js/main.js")
 body
+	div
 	include sections/_mixins
 	include sections/_vars
 	include sections/_header
-	.main#serv
+	.main
 		aside.leftSidebar 
 			include sections/_nav
 			include sections/_ad_left
 			include sections/_fComp
 			include sections/_footer
 		section.centralPart
-			include sections/_serviceDir
-			include sections/_modal
+			.serviceDir#serv
 		aside.rightSidebar
 			include sections/_people
 			include sections/_fProd

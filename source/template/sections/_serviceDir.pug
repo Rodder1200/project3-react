@@ -1,9 +1,0 @@
-.serviceDir
-    header.serviceDir__header
-        h1.serviceDir__title Service Directory
-        button.serviceDir__addNew Add New Service
-    .serviceDir__services
-      .serviceDir__item(v-for="img, i in imgs")
-        .serviceDir__img_border
-            img.serviceDir__img(v-bind:src="img")
-        .serviceDir__text {{titles[i]}}

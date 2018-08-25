@@ -8,11 +8,11 @@
     <meta name="description" content="dentistry">
     <meta name="author" content="Roman Goncharuk">
     <link rel="stylesheet" href="css/main.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
   </head>
 </html>
-<script defer src="js/services.js"></script>
+<script defer src="js/main.js"></script>
 <body>
+  <div></div>
   <header class="header">
     <div class="container"><img class="header__logo" src="./images/header_logo.png" srcset="./images/header_logo.png 2x" alt="header_logo">
       <input class="header__search" type="search" placeholder="Search">
@@ -22,7 +22,7 @@
       </div>
     </div>
   </header>
-  <div class="main" id="serv">
+  <div class="main">
     <aside class="leftSidebar"> 
       <nav class="nav">
         <ul>
@@ -33,7 +33,7 @@
         </ul>
       </nav>
       <div class="ad">
-          <h5 class="ad__header">Advertisement</h5><img class="ad__img" src="./images/ad_left_nurse.png" alt="ad_left_nurse">
+          <h5 class="ad__header">Advertisement</h5><img class="ad__img" src="./images/ad_left_stars.png" alt="ad_left_stars">
           <footer class="ad__footer">Ads By Danteez.com</footer>
       </div>
       <div class="fComp">
@@ -70,24 +70,7 @@
       </footer>
     </aside>
     <section class="centralPart">
-      <div class="serviceDir">
-        <header class="serviceDir__header">
-          <h1 class="serviceDir__title">Service Directory</h1>
-          <button class="serviceDir__addNew">Add New Service</button>
-        </header>
-        <div class="serviceDir__services">
-          <div class="serviceDir__item" v-for="img, i in imgs">
-            <div class="serviceDir__img_border"><img class="serviceDir__img" v-bind:src="img"></div>
-            <div class="serviceDir__text">{{titles[i]}}</div>
-          </div>
-        </div>
-      </div>
-      <div class="modal-wrapper">
-        <div class="modal">
-          <div class="head"><a class="btn-close" href="javascript:;" v-on:click="onClose"></a></div>
-          <div class="content">{{error}}</div>
-        </div>
-      </div>
+      <div class="serviceDir" id="serv"></div>
     </section>
     <aside class="rightSidebar">
       <div class="people">
@@ -146,7 +129,7 @@
         </div>
       </div>
       <div class="ad">
-          <h5 class="ad__header">Advertisement</h5><img class="ad__img" src="./images/ad_right_doctors.png" alt="ad_right_doctors">
+          <h5 class="ad__header">Advertisement</h5><img class="ad__img" src="./images/ad_right_umbrella.png" alt="ad_right_umbrella">
           <footer class="ad__footer">Ads By Danteez.com</footer>
       </div>
       <button class="buttonChat">Chat with friends (<span>36</span>)</button>

@@ -5,8 +5,8 @@ var sass = require('gulp-sass');
 var del = require('del');
 var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
-var concat = require('gulp-concat');
 var sourcemaps = require('gulp-sourcemaps');
+var webpack = require('webpack-stream');
 
 /*---------Server---------*/
 gulp.task('server', function() {
@@ -42,9 +42,12 @@ gulp.task('styles:compile', function () {
 gulp.task('js', function() {
   return gulp.src([
     'source/js/services.js',
-    'source/js/contacts.js'
+    'source/js/contacts.js',
+    'source/js/index.js'
+
   ])
     .pipe(sourcemaps.init())
+    .pipe(webpack( require('./webpack.config.js')))
     .pipe(uglify())
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('docs/js'));
@@ -54,7 +57,6 @@ gulp.task('js', function() {
 gulp.task('clean', function () {
   return del(['build']);
 });
-
 
 /* ------------ Copy fonts ------------- */
 gulp.task('copy:fonts', function() {
